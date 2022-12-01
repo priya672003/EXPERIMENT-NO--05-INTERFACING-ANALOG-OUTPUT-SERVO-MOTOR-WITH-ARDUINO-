@@ -68,11 +68,35 @@ CIRCUIT DIAGRAM
 
 ### PROGRAM :
  
+```python3
+// C++ code
+
+#include<Servo.h>
+Servo myservo;
+int value;
+double angle;
+
+void setup()
+{
+ Serial.begin(9600);
+ myservo.attach(9);
+}
+void loop()
+{
+ value = analogRead(A0);
+ angle = map(value, 0, 1023, 0, 180);
+ Serial.println(angle);
+ myservo.write(angle);
+ delay(15);
+}
 
 
+```
+
+### OUTPUT :
 
 
-
+![t3](https://user-images.githubusercontent.com/81132849/205100304-7f4bd10e-9495-4b1a-82f4-bb6d48248309.png)
 
 
 
